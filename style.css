@@ -1,27 +1,25 @@
 * {
-    font-family: 'Inter', sans-serif;
+    /* font-family: 'Inter', sans-serif; */
+    font-family: 'Press Start 2P', system-ui;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #202124;
+    color: #8503f0; /* all colors except background */
+
 }
 
-h1,
-h2,
-h3,
-input,
-button {
-    font-family: 'Press Start 2P', system-ui;
-}
+
 
 body {
     /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
     padding: 14px;
-    background: #eff6ff;
+    background: #4a3458;
     gap: 14px;
+    
 }
+
 
 header {
     display: flex;
@@ -72,6 +70,36 @@ main {
     gap: 14px;
 }
 
+
+footer  {
+    position: fixed; /* Fixed position */
+    bottom: 0; /* Stick to the bottom */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    background: #4a3458; /* Background color */
+    color: white; /* Text color */
+    text-align: center; /* Center align text */
+    padding: 10px; /* Padding for footer */
+    
+}
+footer a{
+    text-decoration: none;
+}
+
+footer a:hover {
+    transition-duration: 200ms;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    opacity: 0.7;
+
+}
+
+
+#todoInput::placeholder {
+    color: #8503f0;              
+}
+
 .todoItem {
     display: flex;
     align-items: center;
@@ -79,16 +107,24 @@ main {
     padding: 14px;
     border-radius: 14px;
     background: white;
+    
+    
 }
 
 .todoItem p {
     flex: 1;
+    
+    font-size: smaller;
+    
 }
+
+
 
 .actionsContainer {
     display: flex;
     align-items: center;
     gap: 14px;
+    
 }
 
 .actionsContainer button {
