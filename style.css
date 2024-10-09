@@ -4,20 +4,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #8503f0; /* all colors except background */
+    color: #8503f0;
+    /* all colors except background */
 
 }
 
 
 
 body {
-    /* min-height: 100vh; */
+
     display: flex;
     flex-direction: column;
     padding: 14px;
     background: #4a3458;
     gap: 14px;
-    
+
 }
 
 
@@ -71,20 +72,31 @@ main {
 }
 
 
-footer  {
-    position: fixed; /* Fixed position */
-    bottom: 0; /* Stick to the bottom */
-    left: 0; /* Align to the left */
-    right: 0; /* Align to the right */
-    background: #4a3458; /* Background color */
-    color: white; /* Text color */
-    text-align: center; /* Center align text */
-    padding: 10px; /* Padding for footer */
-    
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 10px;
+    display: grid;
+    gap: 14px;
+
+
 }
-footer a{
+
+footer p,
+span {
+    color: orange;
     text-decoration: none;
 }
+
+footer a {
+    color: orangered;
+    text-decoration: none;
+}
+
+
 
 footer a:hover {
     transition-duration: 200ms;
@@ -97,7 +109,7 @@ footer a:hover {
 
 
 #todoInput::placeholder {
-    color: #8503f0;              
+    color: #8503f0;
 }
 
 .todoItem {
@@ -107,15 +119,15 @@ footer a:hover {
     padding: 14px;
     border-radius: 14px;
     background: white;
-    
-    
+
+
 }
 
 .todoItem p {
     flex: 1;
-    
+
     font-size: smaller;
-    
+
 }
 
 
@@ -124,7 +136,7 @@ footer a:hover {
     display: flex;
     align-items: center;
     gap: 14px;
-    
+
 }
 
 .actionsContainer button {
@@ -138,7 +150,38 @@ footer a:hover {
     opacity: 0.7;
 }
 
+.completeCheckbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #8503f0;
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+}
 
+.completeCheckbox:checked {
+    background-color: orange;
+    border-color: #8503f0;
+
+
+}
+
+
+.completeCheckbox:active {
+    transform: scale(0.75);
+}
+
+.todoItem.completed p {
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+    color: orange;
+
+}
+
+.completeCheckbox:active {
+    transform: scale(0.75);
+}
 
 @media (min-width: 640px) {
 
