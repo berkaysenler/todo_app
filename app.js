@@ -93,8 +93,8 @@ function toggleComplete(e) {
 
     if (todo_list[index].completed) {
         document.querySelector(`#todo-${index}`).classList.add('completed'); // line-through effect
-        listScore += 10; // Eğer tamamlandıysa list-based skor 10 artar
-        overallScore += 10; // Overall skor 10 artar
+        listScore += 10; 
+        overallScore += 10; 
     } else {
         document.querySelector(`#todo-${index}`).classList.remove('completed'); // remove line-through effect 
         listScore -= 10;
