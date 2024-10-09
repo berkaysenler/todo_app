@@ -151,6 +151,8 @@ footer a:hover {
 }
 
 .actionsContainer button {
+    font-size: 1.2em;
+    margin: 5px;
     transition-duration: 200ms;
     border: none;
     background: transparent;
