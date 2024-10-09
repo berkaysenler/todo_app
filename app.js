@@ -43,6 +43,7 @@ function paintUI() {
     mainContainer.innerHTML = new_inner_html
     saveData()
     addCheckboxListeners();
+    addTodoItemClickListeners();
 
     listScoreDisplay.textContent = listScore;
 
@@ -93,8 +94,8 @@ function toggleComplete(e) {
 
     if (todo_list[index].completed) {
         document.querySelector(`#todo-${index}`).classList.add('completed'); // line-through effect
-        listScore += 10; 
-        overallScore += 10; 
+        listScore += 10;
+        overallScore += 10;
     } else {
         document.querySelector(`#todo-${index}`).classList.remove('completed'); // remove line-through effect 
         listScore -= 10;
@@ -103,13 +104,30 @@ function toggleComplete(e) {
 
     listScoreDisplay.textContent = listScore; // update list-based score
     overallScoreDisplay.textContent = overallScore; //update overall score
-    saveData(); // Verileri kaydet
+    saveData();
 }
 
 function addCheckboxListeners() {
     let checkboxes = document.querySelectorAll('.completeCheckbox');
     checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', toggleComplete); // checkbox click event
+        checkbox.addEventListener('click', (e) => {
+            e.stopPropagation(); // stop the event from bubbling up to the parent element
+            toggleComplete(e);
+        });
+    });
+}
+
+function addTodoItemClickListeners() {
+    let todoItems = document.querySelectorAll('.todoItem');
+    todoItems.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            // if the click was not on the edit or delete button, toggle the checkbox :) love you fritz
+            if (!e.target.closest('button')) {
+                const checkbox = item.querySelector('.completeCheckbox');
+                checkbox.checked = !checkbox.checked;
+                toggleComplete({ target: checkbox });
+            }
+        });
     });
 }
 

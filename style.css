@@ -49,6 +49,10 @@ header button {
     cursor: pointer;
 }
 
+header button:active {
+    transform: scale(0.90);
+}
+
 header button:hover {
     opacity: 0.7;
 }
@@ -113,13 +117,20 @@ footer a:hover {
 }
 
 .todoItem {
+    transition-duration: 100ms;
     display: flex;
     align-items: center;
     gap: 14px;
     padding: 14px;
     border-radius: 14px;
     background: white;
+    cursor: pointer;
 
+
+}
+
+.todoItem:active{
+    transform: scale(0.98);
 
 }
 
